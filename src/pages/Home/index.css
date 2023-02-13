@@ -1,0 +1,14 @@
+.container {
+  font-family: "melody";
+  @apply flex
+  grow
+  w-full
+  flex-col
+  items-center
+  justify-center;
+}
+.wrapper {
+  /* border: 3px solid red; */
+  font-family: "lope";
+  @apply w-full;
+}

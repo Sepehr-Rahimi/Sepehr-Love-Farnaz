@@ -1,0 +1,17 @@
+.main {
+  box-shadow: inset -10px -10px 10px -10px rgba(255, 255, 255, 0.262),
+    inset 10px 10px 10px -10px rgba(0, 0, 0, 0.411);
+  @apply font-bold
+        bg-purple-400
+        /* shadow-md
+        shadow-slate-600 */
+        flex
+        flex-col
+        justify-center
+        mt-10
+        items-center
+          rounded-2xl
+          text-slate-800
+          px-6
+          py-4;
+}

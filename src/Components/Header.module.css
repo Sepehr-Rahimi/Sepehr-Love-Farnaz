@@ -1,0 +1,28 @@
+.container {
+  font-family: "lope";
+  /* box-shadow: inset -10px -10px 10px -10px rgba(255, 255, 255, 0.262),
+    inset 10px 10px 10px -10px rgba(0, 0, 0, 0.411); */
+  @apply h-[50px]
+  rounded-b-[30px]
+  bg-purple-400
+  w-full
+  flex
+  items-center
+  justify-around
+  shadow-md
+  shadow-slate-600;
+}
+.activeItem {
+  box-shadow: inset -10px -10px 10px -10px rgba(255, 255, 255, 0.262),
+    inset 10px 10px 10px -10px rgba(0, 0, 0, 0.411);
+  @apply font-bold
+    rounded-2xl
+    text-slate-800
+    px-3
+    py-1;
+}
+.item {
+  @apply px-3
+    text-slate-700
+    py-1;
+}
