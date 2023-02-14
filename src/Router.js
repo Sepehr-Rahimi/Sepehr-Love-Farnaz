@@ -1,15 +1,18 @@
 import { Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import Gallery from "./pages/Gallery";
-import OurStory from "./pages/OurStory";
+import { lazy, Suspense } from "react";
 
 const Router = () => {
+  const Home = lazy(() => import("./pages/Home"));
+  const Gallery = lazy(() => import("./pages/Gallery"));
+  const OurStory = lazy(() => import("./pages/OurStory"));
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/Gallery" element={<Gallery />} />
-      <Route path="/OurStory" element={<OurStory />} />
-    </Routes>
+    <Suspense>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Gallery" element={<Gallery />} />
+        <Route path="/OurStory" element={<OurStory />} />
+      </Routes>
+    </Suspense>
   );
 };
 
