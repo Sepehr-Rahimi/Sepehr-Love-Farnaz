@@ -41,55 +41,59 @@ const Home = () => {
     }, 1000);
     return () => clearInterval(interval);
   }, []);
-  return (
-    <div className="container">
-      <div className="flex justify-around items-center w-full py-5 md:flex-col">
-        <div className="w-[30%] flex flex-col items-center text-purple-900 md:w-[70%]">
-          <img
-            className="rounded-lg shadow-md shadow-black"
-            src={farnaz}
-            alt=""
-          />
-          <div className="font-semibold text-[25px]">Farnaz</div>
+  if (document.readyState === "complete") {
+    return (
+      <div className="container">
+        <div className="flex justify-around items-center w-full py-5 md:flex-col">
+          <div className="w-[30%] flex flex-col items-center text-purple-900 md:w-[70%]">
+            <img
+              className="rounded-lg shadow-md shadow-black"
+              src={farnaz}
+              alt=""
+            />
+            <div className="font-semibold text-[25px]">Farnaz</div>
+          </div>
+          <img className="w-[30%] md:w-[70%]" src={heart} alt="" />
+          <div className="w-[30%] flex flex-col items-center text-purple-900 md:w-[70%]">
+            <img
+              className="rounded-lg shadow-md shadow-black"
+              src={sepehr}
+              alt=""
+            />
+            <div className="font-semibold text-[25px]">Sepehr</div>
+          </div>
         </div>
-        <img className="w-[30%] md:w-[70%]" src={heart} alt="" />
-        <div className="w-[30%] flex flex-col items-center text-purple-900 md:w-[70%]">
-          <img
-            className="rounded-lg shadow-md shadow-black"
-            src={sepehr}
-            alt=""
+        <div className="text-[25px] font-semibold my-5">
+          <span>{year}</span>
+          <span> Year </span>
+          <span>{month}</span>
+          <span> Month </span>
+          <span>{day}</span>
+          <span> Day </span>
+          <span>{hour}</span>
+          <span> hour </span>
+          <span>{min}</span>
+          <span> min </span>
+          <span>{sec}</span>
+          <span> sec </span>
+        </div>
+        <div className="flex w-full justify-around">
+          🖤
+          <ProgressBar
+            className="wrapper"
+            // width={"330px"}
+            completed={Math.floor((duration / (3600 * 24) / 365) * 100)}
           />
-          <div className="font-semibold text-[25px]">Sepehr</div>
+          💖
+        </div>
+        <div className="text-center font-bold text-[32px] my-4">
+          Love in progress
         </div>
       </div>
-      <div className="text-[25px] font-semibold my-5">
-        <span>{year}</span>
-        <span> Year </span>
-        <span>{month}</span>
-        <span> Month </span>
-        <span>{day}</span>
-        <span> Day </span>
-        <span>{hour}</span>
-        <span> hour </span>
-        <span>{min}</span>
-        <span> min </span>
-        <span>{sec}</span>
-        <span> sec </span>
-      </div>
-      <div className="flex w-full justify-around">
-        🖤
-        <ProgressBar
-          className="wrapper"
-          // width={"330px"}
-          completed={Math.floor((duration / (3600 * 24) / 365) * 100)}
-        />
-        💖
-      </div>
-      <div className="text-center font-bold text-[32px] my-4">
-        Love in progress
-      </div>
-    </div>
-  );
+    );
+  } else {
+    return <div>My Love Please Wait , Its loading ....</div>;
+  }
 };
 
 export default Home;
